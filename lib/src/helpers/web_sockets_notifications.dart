@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:tic_tac_toe/src/constants/constant.dart';
+import 'package:tic_tac_toe/src/common/constants/app_constant.dart';
 import 'package:web_socket_channel/io.dart';
 
 class WebSocketsNotifications {

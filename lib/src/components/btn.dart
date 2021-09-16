@@ -1,19 +1,64 @@
 import 'package:flutter/material.dart';
+
+import 'package:tic_tac_toe/src/common/constants/app_constant.dart';
 import 'package:tic_tac_toe/src/themes/custom_colors.dart';
 
+class ButtonBase extends StatefulWidget {
+  const ButtonBase({
+    Key? key,
+    required this.child,
+    required this.onTap,
+  }) : super(key: key);
+
+  final Widget child;
+  final VoidCallback onTap;
+
+  @override
+  _ButtonBaseState createState() => _ButtonBaseState();
+}
+
+class _ButtonBaseState extends State<ButtonBase> {
+  bool _tapDown = false;
+
+  void _updateTapDown(bool value) {
+    if (_tapDown != value) {
+      setState(() {
+        _tapDown = value;
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedScale(
+      scale: _tapDown ? .9 : 1,
+      curve: Curves.easeOutCirc,
+      duration: DURATION_LONG,
+      child: GestureDetector(
+        behavior: HitTestBehavior.translucent,
+        onTapDown: (_) => _updateTapDown(true),
+        onTapUp: (_) => _updateTapDown(false),
+        onTapCancel: () => _updateTapDown(false),
+        onTap: widget.onTap,
+        child: widget.child,
+      ),
+    );
+  }
+}
+
 class Btn extends StatelessWidget {
-  final List<Color> gradient;
-  final Color color;
+  final List<Color>? gradient;
+  final Color? color;
   final double height;
   final double width;
-  final GestureTapCallback onTap;
+  final VoidCallback onTap;
   final double borderRadius;
   final Widget child;
 
   const Btn({
     Key? key,
-    required this.gradient,
-    required this.color,
+    this.gradient,
+    this.color,
     required this.onTap,
     required this.child,
     required this.borderRadius,
@@ -23,25 +68,30 @@ class Btn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return ButtonBase(
       onTap: onTap,
-      child: Container(
-        height: height,
-        width: width,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(borderRadius),
-          color: color,
-          gradient: LinearGradient(
-            begin: Alignment.centerLeft,
-            end: Alignment.centerRight,
-            stops: const [0.1, 0.8],
-            colors: gradient,
-          ),
-          boxShadow: const [BoxShadow(color: CustomColors.purpleShadow, spreadRadius: 5, blurRadius: 10)],
-        ),
-        child: Center(
-          child: child,
-        ),
+      child: AnimatedTheme(
+        data: ThemeData(),
+        child: Builder(builder: (context) {
+          return Container(
+            height: height,
+            width: width,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(borderRadius),
+              color: color ?? CustomColors.textHeader,
+              gradient: LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+                stops: const [0.1, 0.8],
+                colors: gradient ?? [CustomColors.textWhite, CustomColors.textWhite],
+              ),
+              boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.1), spreadRadius: 5, blurRadius: 10)],
+            ),
+            child: Center(
+              child: child,
+            ),
+          );
+        }),
       ),
     );
   }

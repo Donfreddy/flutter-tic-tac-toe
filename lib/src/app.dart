@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
               case '':
                 return Container();
               default:
-                return const HomeView();
+                return HomeView();
             }
           },
         );
