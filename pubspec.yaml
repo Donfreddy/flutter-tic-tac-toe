@@ -52,8 +52,19 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^1.0.0
 
+  # Splash screen generator
+  flutter_native_splash: ^1.2.3
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
+
+# Settings for the flutter_native_splash package
+# run flutter pub run flutter_native_splash:create to update splash screen
+flutter_native_splash:
+  image: assets/images/logo.png
+  color: "#FFFFFF"
+  ios: false
+  web: false
 
 # The following section is specific to Flutter.
 flutter:

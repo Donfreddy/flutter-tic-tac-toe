@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tic_tac_toe/src/components/gradient_bg.dart';
+import 'package:tic_tac_toe/src/themes/custom_colors.dart';
 
 class SelectDifficulty extends StatefulWidget {
   const SelectDifficulty({Key? key}) : super(key: key);
@@ -15,7 +16,9 @@ class _SelectDifficultyState extends State<SelectDifficulty> {
   Widget build(BuildContext context) {
     return GradientBG(
       child: Scaffold(
-        body: Container(),
+        body: Container(
+          color: CustomColors.textWhite,
+        ),
       ),
     );
   }

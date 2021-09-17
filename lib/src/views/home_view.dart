@@ -7,6 +7,7 @@ import 'package:tic_tac_toe/src/components/cross.dart';
 import 'package:tic_tac_toe/src/components/gradient_bg.dart';
 import 'package:tic_tac_toe/src/services/sound_service.dart';
 import 'package:tic_tac_toe/src/themes/custom_colors.dart';
+import 'package:tic_tac_toe/src/views/pick_side_view.dart';
 
 class HomeView extends StatelessWidget {
   final soundService = locator<SoundService>();
@@ -50,8 +51,8 @@ class HomeView extends StatelessWidget {
                 children: [
                   Btn(
                     onTap: () {
-                      soundService.playSound('click');
-                      Navigator.pushNamed(context, '');
+                      // soundService.playSound('click');
+                      Navigator.pushNamed(context, PickSideView.routeName);
                     },
                     height: 50,
                     width: 250,
@@ -65,7 +66,7 @@ class HomeView extends StatelessWidget {
                   BounceInAnimation(
                     child: Btn(
                       onTap: () {
-                        soundService.playSound('click');
+                        // soundService.playSound('click');
                       },
                       color: Colors.white,
                       height: 50,
@@ -80,7 +81,7 @@ class HomeView extends StatelessWidget {
                   const SizedBox(height: 14),
                   Btn(
                     onTap: () {
-                      soundService.playSound('click');
+                     // soundService.playSound('click');
                     },
                     color: Colors.white,
                     height: 50,
@@ -98,7 +99,7 @@ class HomeView extends StatelessWidget {
                     children: [
                       Btn(
                         onTap: () {
-                          soundService.playSound('click');
+                         //  soundService.playSound('click');
                         },
                         color: Colors.white,
                         height: 50,

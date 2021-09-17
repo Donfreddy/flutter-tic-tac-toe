@@ -11,10 +11,10 @@ class GradientBG extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
         gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
           stops: [0.01, 0.9],
-          colors: [CustomColors.yellowIcon, CustomColors.purpleDark],
+          colors: [CustomColors.g, CustomColors.b],
         ),
       ),
       child: child,

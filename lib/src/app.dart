@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tic_tac_toe/src/views/pick_side_view.dart';
 import 'package:tic_tac_toe/src/views/select_difficulty.dart';
 import 'package:tic_tac_toe/src/views/settings_view.dart';
 import 'package:tic_tac_toe/src/themes/custom_colors.dart';
@@ -26,6 +27,10 @@ class MyApp extends StatelessWidget {
           settings: routeSettings,
           builder: (BuildContext context) {
             switch (routeSettings.name) {
+              case HomeView.routeName:
+                return HomeView();
+              case PickSideView.routeName:
+                return const PickSideView();
               case SinglePlayerGameView.routeName:
                 return const SinglePlayerGameView();
               case TwoPlayerGameView.routeName:

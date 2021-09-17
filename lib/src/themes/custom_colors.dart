@@ -30,6 +30,12 @@ class CustomColors {
   static const Color blueBackground = Color.fromRGBO(155, 255, 248, 0.36); // 36%
   static const Color blueShadow = Color.fromRGBO(104, 148, 238, 1);
 
+  //
+  static const Color g = Color(0xFF00D2FF);
+  static const Color b = Color(0xFF3A7BD5);
+  static const Color r = Color(0xFFF54D62);
+  static const Color b1 = Color(0xFF87E43A);
+
   static const Color headerBlueLight = Color.fromRGBO(129, 199, 245, 1);
   static const Color headerBlueDark = Color.fromRGBO(56, 103, 213, 1);
   static const Color headerGreyLight = Color.fromRGBO(225, 255, 255, 0.31); // 31%
