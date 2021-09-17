@@ -33,14 +33,14 @@ class HomeView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: const <Widget>[
                       SizedBox(
-                        width: 120.0,
-                        height: 120.0,
-                        child: Cross(crossWidth: 30.0),
+                        width: 110.0,
+                        height: 110.0,
+                        child: Cross(crossWidth: 25.0),
                       ),
                       SizedBox(
-                        width: 120.0,
-                        height: 120.0,
-                        child: Circle(circleWidth: 30.0),
+                        width: 110.0,
+                        height: 110.0,
+                        child: Circle(circleWidth: 25.0),
                       ),
                     ],
                   ),
@@ -51,8 +51,9 @@ class HomeView extends StatelessWidget {
                   Btn(
                     onTap: () {
                       soundService.playSound('click');
+                      Navigator.pushNamed(context, '');
                     },
-                    height: 55,
+                    height: 50,
                     width: 250,
                     borderRadius: 250,
                     child: const Text(
@@ -67,7 +68,7 @@ class HomeView extends StatelessWidget {
                         soundService.playSound('click');
                       },
                       color: Colors.white,
-                      height: 55,
+                      height: 50,
                       width: 250,
                       borderRadius: 250,
                       child: const Text(
@@ -82,7 +83,7 @@ class HomeView extends StatelessWidget {
                       soundService.playSound('click');
                     },
                     color: Colors.white,
-                    height: 55,
+                    height: 50,
                     width: 250,
                     borderRadius: 250,
                     child: const Text(
@@ -96,7 +97,9 @@ class HomeView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Btn(
-                        onTap: () {},
+                        onTap: () {
+                          soundService.playSound('click');
+                        },
                         color: Colors.white,
                         height: 50,
                         width: 50,
