@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:tic_tac_toe/src/common/constants/app_constant.dart';
+import 'package:tic_tac_toe/src/themes/style.dart';
 import 'package:tic_tac_toe/src/views/pick_side_view.dart';
 import 'package:tic_tac_toe/src/views/select_difficulty.dart';
 import 'package:tic_tac_toe/src/views/settings_view.dart';
 import 'package:tic_tac_toe/src/themes/custom_colors.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:tic_tac_toe/src/views/home_view.dart';
 import 'package:tic_tac_toe/src/views/single_player_game_view.dart';
 import 'package:tic_tac_toe/src/views/two_player_game_view.dart';
@@ -15,12 +18,20 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Game',
+      title: APP_NAME,
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('en', ''),
+        Locale('fr', ''),
+      ],
       theme: ThemeData(
-        textTheme: GoogleFonts.nunitoTextTheme(
-          Theme.of(context).textTheme,
-        ),
         canvasColor: CustomColors.greyBackground,
+        fontFamily: Fonts.nunito,
       ),
       onGenerateRoute: (RouteSettings routeSettings) {
         return MaterialPageRoute<void>(
@@ -42,7 +53,19 @@ class MyApp extends StatelessWidget {
               case '':
                 return Container();
               default:
-                return HomeView();
+                return Scaffold(
+                  body: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const Text('Not found route for:'),
+                      Text(
+                        routeSettings.name ?? '',
+                        style: const TextStyle(color: CustomColors.r),
+                      ),
+                    ],
+                  ),
+                );
             }
           },
         );

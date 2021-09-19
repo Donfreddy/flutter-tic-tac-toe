@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:tic_tac_toe/src/common/constants/app_constant.dart';
+import 'package:tic_tac_toe/src/themes/style.dart';
 
 /// A [PageRoute] that fades into the new widget.
 class FadeRoute<T> extends PageRoute<T> {
   FadeRoute({
     required this.builder,
     required RouteSettings settings,
-    this.duration = DURATION_LONG,
+    this.duration = Times.xlong,
   }) : super(settings: settings);
 
   final WidgetBuilder builder;

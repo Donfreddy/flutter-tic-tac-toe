@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tic_tac_toe/src/common/constants/app_constant.dart';
+import 'package:tic_tac_toe/src/themes/style.dart';
 
 /// Used by [FadeAnimation] to determine whether to fade in or fade out its
 /// child.
@@ -17,7 +18,7 @@ class FadeAnimation extends StatefulWidget {
     required this.child,
     this.fadeType = FadeType.fadeIn,
     this.curve = Curves.fastOutSlowIn,
-    this.duration = DURATION_LONG,
+    this.duration = Times.xlong,
     this.delay = Duration.zero,
     Key? key,
   }) : super(key: key);

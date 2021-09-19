@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-
-import 'package:tic_tac_toe/src/common/constants/app_constant.dart';
+import 'package:tic_tac_toe/src/animations/animated_scale.dart';
 import 'package:tic_tac_toe/src/themes/custom_colors.dart';
+import 'package:tic_tac_toe/src/themes/style.dart';
 
 class ButtonBase extends StatefulWidget {
   const ButtonBase({
@@ -33,7 +33,7 @@ class _ButtonBaseState extends State<ButtonBase> {
     return AnimatedScale(
       scale: _tapDown ? .9 : 1,
       curve: Curves.easeOutCirc,
-      duration: DURATION_LONG,
+      duration: Times.xlong,
       child: GestureDetector(
         behavior: HitTestBehavior.translucent,
         onTapDown: (_) => _updateTapDown(true),

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:tic_tac_toe/src/common/constants/app_constant.dart';
+import 'package:tic_tac_toe/src/themes/style.dart';
 
 /// An implicitly animated widget that will animate a change to [scale].
 class AnimatedScale extends ImplicitlyAnimatedWidget {
   const AnimatedScale({
     Key? key,
     Curve curve = Curves.easeInOut,
-    Duration duration = DURATION_MEDIUM,
+    Duration duration = Times.medium,
     required this.scale,
     required this.child,
   }) : super(key: key, curve: curve, duration: duration);

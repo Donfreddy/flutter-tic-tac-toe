@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'dart:ui';
 
 class ScreenUtil {
@@ -25,10 +26,7 @@ class ScreenUtil {
     return _instance;
   }
 
-  static void init(
-      {num width = defaultWidth,
-      num height = defaultHeight,
-      bool allowFontScaling = false}) {
+  static void init({num width = defaultWidth, num height = defaultHeight, bool allowFontScaling = false}) {
     _instance = ScreenUtil._();
     _instance.uiWidthPx = width;
     _instance.uiHeightPx = height;
@@ -71,10 +69,9 @@ class ScreenUtil {
   /// The ratio of the actual dp to the design draft px
   double get scaleWidth => screenWidth / uiWidthPx;
 
-  double get scaleHeight =>
-      (_screenHeight - _statusBarHeight - _bottomBarHeight) / uiHeightPx;
+  double get scaleHeight => (_screenHeight - _statusBarHeight - _bottomBarHeight) / uiHeightPx;
 
-  double get scaleText => scaleWidth;
+  double get scaleText => min(scaleWidth, scaleHeight);
 
   /// Width function
   /// Adapted to the device width of the UI Design.
@@ -89,17 +86,15 @@ class ScreenUtil {
   /// does not match the current style effect, or if there is a difference in shape.
   double setHeight(num height) => height * scaleHeight;
 
+  ///Adapt according to the smaller of width or height
+  double radius(num r) => r * scaleText;
+
   ///FontSize function
   ///@param [fontSize] UI in px.
   ///Font size adaptation method
   ///@param [fontSize] The size of the font on the UI design, in px.
   ///@param [allowFontScaling]
-  double setSp(num fontSize, {bool allowFontScalingSelf = false}) =>
-      allowFontScalingSelf
-          ? (allowFontScalingSelf
-              ? (fontSize * scaleText)
-              : ((fontSize * scaleText) / _textScaleFactor))
-          : (allowFontScaling
-              ? (fontSize * scaleText)
-              : ((fontSize * scaleText) / _textScaleFactor));
+  double setSp(num fontSize, {bool allowFontScalingSelf = false}) => allowFontScalingSelf
+      ? (allowFontScalingSelf ? (fontSize * scaleText) : ((fontSize * scaleText) / _textScaleFactor))
+      : (allowFontScaling ? (fontSize * scaleText) : ((fontSize * scaleText) / _textScaleFactor));
 }

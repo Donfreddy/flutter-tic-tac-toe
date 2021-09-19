@@ -2,6 +2,7 @@
     package="com.freddydev.tic_tac_toe">
    <application
         android:label="tic_tac_toe"
+        android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tic_tac_toe/src/common/constants/app_constant.dart';
+import 'package:tic_tac_toe/src/themes/style.dart';
 
 /// Builds an [AnimatedSize] widget with the [child].
 ///
@@ -9,7 +9,7 @@ class CustomAnimatedSize extends StatefulWidget {
   const CustomAnimatedSize({
     Key? key,
     required this.child,
-    this.duration = DURATION_MEDIUM,
+    this.duration = Times.short,
     this.curve = Curves.easeOutCubic,
     this.alignment = Alignment.center,
   }) : super(key: key);
@@ -31,6 +31,7 @@ class _CustomAnimatedSizeState extends State<CustomAnimatedSize>
       duration: widget.duration,
       curve: widget.curve,
       alignment: widget.alignment,
+      vsync: this,
       child: widget.child,
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tic_tac_toe/src/common/constants/app_constant.dart';
+import 'package:tic_tac_toe/src/themes/style.dart';
 
 class BouncingButton extends StatefulWidget {
   final Widget child;
@@ -20,7 +21,7 @@ class _BouncingButtonState extends State<BouncingButton>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: DURATION_MEDIUM,
+      duration: Times.medium,
       lowerBound: 0.0,
       upperBound: 0.1,
     )..addListener(() {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tic_tac_toe/src/utils/enums.dart';
 
-enum GameState { blank, x, o }
 
 class SinglePlayerGameView extends StatefulWidget {
   const SinglePlayerGameView({Key? key}) : super(key: key);

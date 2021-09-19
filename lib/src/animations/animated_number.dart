@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:tic_tac_toe/src/common/constants/app_constant.dart';
+import 'package:tic_tac_toe/src/themes/style.dart';
 
 /// Implicitly animations a change to [number].
 ///
@@ -40,7 +40,7 @@ class _AnimatedNumberState extends State<AnimatedNumber>
     _oldNumber = widget.number;
 
     _controller = AnimationController(
-      duration: DURATION_MEDIUM,
+      duration: Times.medium,
       vsync: this,
     );
 

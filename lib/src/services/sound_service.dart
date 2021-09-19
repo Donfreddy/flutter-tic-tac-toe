@@ -17,7 +17,8 @@ class SoundService {
   playSound(String sound) {
     bool isSoundEnabled = _enableSound$.value;
     if (isSoundEnabled) {
-      _player.play('$sound.mp3');
+      _player.play('$sound.mp3', volume: 0.6); // 0.0 -> 1.0
+      // _fixedPlayer.setVolume(0.8);
     }
   }
 }

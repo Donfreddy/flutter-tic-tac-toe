@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tic_tac_toe/src/common/constants/app_constant.dart';
+import 'package:tic_tac_toe/src/themes/style.dart';
 
 
 /// A simple animation that 'bounces in' its [child].
@@ -7,7 +7,7 @@ class BounceInAnimation extends StatefulWidget {
   const BounceInAnimation({
     Key? key,
     required this.child,
-    this.duration = DURATION_SHORT,
+    this.duration = Times.short,
     this.delay = Duration.zero,
   }) : super(key: key);
 
