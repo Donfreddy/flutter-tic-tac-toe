@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tic_tac_toe/src/common/extensions/size_extensions.dart';
 import 'package:tic_tac_toe/src/common/constants/size_constants.dart';
+import 'package:tic_tac_toe/src/themes/custom_colors.dart';
 
 class Times {
   static const xshort = Duration(milliseconds: 100);
@@ -20,18 +21,18 @@ class TextStyles {
   static TextStyle get name => base.copyWith();
 
   static TextStyle get btnText => base.copyWith(
-        fontSize: Sizes.dimen_20.sp,
+        fontSize: Sizes.dimen_24.sp,
         fontWeight: FontWeight.w700,
-        color: Colors.black,
+        color: CustomColors.black,
       );
 
   static TextStyle get modalTitle => base.copyWith(
-        fontSize: Sizes.dimen_16.sp,
+        fontSize: Sizes.dimen_20.sp,
         fontWeight: FontWeight.w700,
       );
 
   static TextStyle get modalContent => base.copyWith(
-        fontSize: Sizes.dimen_12.sp,
+        fontSize: Sizes.dimen_16.sp,
         fontWeight: FontWeight.w600,
       );
 }

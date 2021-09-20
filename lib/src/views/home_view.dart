@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tic_tac_toe/service_locator.dart';
 import 'package:tic_tac_toe/src/animations/bounce_in_animation.dart';
+import 'package:tic_tac_toe/src/common/constants/app_assets.dart';
 import 'package:tic_tac_toe/src/common/constants/size_constants.dart';
 import 'package:tic_tac_toe/src/components/btn.dart';
 import 'package:tic_tac_toe/src/components/circle.dart';
@@ -33,133 +34,79 @@ class HomeView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Expanded(
-                flex: 1,
                 child: Align(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      SizedBox(
-                        width: Sizes.dimen_110.w,
-                        height: Sizes.dimen_110.h,
-                        child: Cross(crossWidth: Sizes.dimen_24.w),
-                      ),
-                      SizedBox(
-                        width: Sizes.dimen_110.w,
-                        height: Sizes.dimen_110.h,
-                        child: Circle(circleWidth: Sizes.dimen_24.w),
-                      ),
-                    ],
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: CustomColors.white,
+                      borderRadius: BorderRadius.circular(Sizes.dimen_20.r),
+                    ),
+                    child: Image.asset(AppAssets.logo, width: Sizes.dimen_160.w),
                   ),
                 ),
               ),
-              Column(
-                children: [
-                  Btn(
-                    onTap: () {
-                      // soundService.playSound('click');
-                      Navigator.pushNamed(context, PickSideView.routeName);
-                    },
-                    height: Sizes.dimen_50.h,
-                    width: Sizes.dimen_250.w,
-                    borderRadius: Sizes.dimen_250.r,
-                    child: Text(
-                      AppLocalizations.of(context)!.singlePlayer,
-                      style: TextStyles.btnText,
+              Expanded(
+                child: Column(
+                  children: [
+                    Btn(
+                      onTap: () {
+                        // soundService.playSound('click');
+                        Navigator.pushNamed(context, PickSideView.routeName);
+                      },
+                      height: Sizes.dimen_30.h,
+                      width: Sizes.dimen_280.w,
+                      borderRadius: Sizes.dimen_250.r,
+                      child: Text(
+                        AppLocalizations.of(context)!.singlePlayer,
+                        style: TextStyles.btnText,
+                      ),
                     ),
-                  ),
-                  SizedBox(height: Sizes.dimen_14.h),
-                  BounceInAnimation(
-                    child: Btn(
+                    SizedBox(height: Sizes.dimen_6.h),
+                    BounceInAnimation(
+                      child: Btn(
+                        onTap: () {
+                          // soundService.playSound('click');
+                        },
+                        color: Colors.white,
+                        height: Sizes.dimen_30.h,
+                        width: Sizes.dimen_280.w,
+                        borderRadius: Sizes.dimen_250.r,
+                        child: Text(
+                          AppLocalizations.of(context)!.localMultiplayer,
+                          style: TextStyles.btnText,
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: Sizes.dimen_6.h),
+                    Btn(
                       onTap: () {
                         // soundService.playSound('click');
                       },
                       color: Colors.white,
-                      height: Sizes.dimen_50.h,
-                      width: Sizes.dimen_250.w,
+                      height: Sizes.dimen_30.h,
+                      width: Sizes.dimen_280.w,
                       borderRadius: Sizes.dimen_250.r,
                       child: Text(
-                        AppLocalizations.of(context)!.localMultiplayer,
+                        AppLocalizations.of(context)!.onlineMode,
                         style: TextStyles.btnText,
                       ),
                     ),
-                  ),
-                  SizedBox(height: Sizes.dimen_14.h),
-                  Btn(
-                    onTap: () {
-                      // soundService.playSound('click');
-                    },
-                    color: Colors.white,
-                    height: Sizes.dimen_50.h,
-                    width: Sizes.dimen_250.w,
-                    borderRadius: Sizes.dimen_250.r,
-                    child: Text(
-                      AppLocalizations.of(context)!.onlineMode,
-                      style: TextStyles.btnText,
+                    SizedBox(height: Sizes.dimen_6.h),
+                    Btn(
+                      onTap: () {
+                        // soundService.playSound('click');
+                        Navigator.pushNamed(context, SettingsView.routeName);
+                      },
+                      color: Colors.white,
+                      height: Sizes.dimen_30.h,
+                      width: Sizes.dimen_280.w,
+                      borderRadius: Sizes.dimen_250.r,
+                      child: Text(
+                        'Settings',
+                        style: TextStyles.btnText,
+                      ),
                     ),
-                  ),
-                  SizedBox(height: Sizes.dimen_60.h),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Btn(
-                        onTap: () {
-                          //  soundService.playSound('click');
-                          Navigator.pushNamed(context, SettingsView.routeName);
-                        },
-                        color: Colors.white,
-                        height: Sizes.dimen_50.h,
-                        width: Sizes.dimen_50.w,
-                        borderRadius: Sizes.dimen_30.r,
-                        child: Icon(
-                          Icons.settings,
-                          size: Sizes.dimen_30.sp,
-                          color: CustomColors.textHeader,
-                        ),
-                      ),
-                      SizedBox(width: Sizes.dimen_10.w),
-                      Btn(
-                        onTap: () {},
-                        color: Colors.white,
-                        height: Sizes.dimen_50.h,
-                        width: Sizes.dimen_50.w,
-                        borderRadius: Sizes.dimen_30.r,
-                        child: Icon(
-                          Icons.audiotrack_rounded,
-                          size: Sizes.dimen_30.sp,
-                          color: CustomColors.textHeader,
-                        ),
-                      ),
-                      SizedBox(width: Sizes.dimen_10.w),
-                      Btn(
-                        onTap: () {},
-                        color: Colors.white,
-                        height: Sizes.dimen_50.h,
-                        width: Sizes.dimen_50.w,
-                        borderRadius: Sizes.dimen_30.r,
-                        child: Icon(
-                          Icons.star,
-                          size: Sizes.dimen_30.sp,
-                          color: CustomColors.textHeader,
-                        ),
-                      ),
-                      SizedBox(width: Sizes.dimen_10.w),
-                      Btn(
-                        onTap: () {},
-                        color: Colors.white,
-                        height: Sizes.dimen_50.h,
-                        width: Sizes.dimen_50.w,
-                        borderRadius: Sizes.dimen_30.r,
-                        child: Icon(
-                          Icons.share,
-                          size: Sizes.dimen_30.sp,
-                          color: CustomColors.textHeader,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: Sizes.dimen_30.h),
-                ],
+                  ],
+                ),
               )
             ],
           ),

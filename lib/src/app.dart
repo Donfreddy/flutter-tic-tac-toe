@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tic_tac_toe/src/common/constants/app_constant.dart';
+import 'package:tic_tac_toe/src/common/screenutil/screenutil.dart';
 import 'package:tic_tac_toe/src/themes/style.dart';
 import 'package:tic_tac_toe/src/views/pick_side_view.dart';
 import 'package:tic_tac_toe/src/views/select_difficulty.dart';
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: APP_NAME,

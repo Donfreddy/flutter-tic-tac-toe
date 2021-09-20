@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:tic_tac_toe/src/themes/style.dart';
 
 /// An implicitly animated widget that will animate a change to [scale].
-class AnimatedScale extends ImplicitlyAnimatedWidget {
-  const AnimatedScale({
+class AnimatedScales extends ImplicitlyAnimatedWidget {
+  const AnimatedScales({
     Key? key,
     Curve curve = Curves.easeInOut,
     Duration duration = Times.medium,
@@ -18,7 +18,7 @@ class AnimatedScale extends ImplicitlyAnimatedWidget {
   _AnimatedScaleState createState() => _AnimatedScaleState();
 }
 
-class _AnimatedScaleState extends AnimatedWidgetBaseState<AnimatedScale> {
+class _AnimatedScaleState extends AnimatedWidgetBaseState<AnimatedScales> {
   Tween<dynamic>? _scaleTween;
 
   @override

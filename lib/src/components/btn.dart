@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tic_tac_toe/src/animations/animated_scale.dart';
+import 'package:tic_tac_toe/src/animations/animated_scales.dart';
 import 'package:tic_tac_toe/src/themes/custom_colors.dart';
 import 'package:tic_tac_toe/src/themes/style.dart';
 
@@ -30,7 +30,7 @@ class _ButtonBaseState extends State<ButtonBase> {
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedScale(
+    return AnimatedScales(
       scale: _tapDown ? .9 : 1,
       curve: Curves.easeOutCirc,
       duration: Times.xlong,

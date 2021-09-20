@@ -9,7 +9,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   //
-  // await SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
+ await SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
 
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(

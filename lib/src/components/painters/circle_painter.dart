@@ -10,7 +10,7 @@ class CirclePainter extends CustomPainter {
 
   CirclePainter({required this.fraction, this.circleWidth = 12.0}) {
     _circlePaint = Paint()
-      ..color = CustomColors.textHeader
+      ..color = CustomColors.r
       ..style = PaintingStyle.stroke
       ..strokeWidth = circleWidth
       ..strokeCap = StrokeCap.round;

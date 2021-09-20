@@ -11,7 +11,7 @@ class CrossPainter extends CustomPainter {
     this.crossWidth = 12.0,
   }) {
     _crossPaint = Paint()
-      ..color = CustomColors.purpleDark
+      ..color = CustomColors.b1
       ..strokeWidth = crossWidth
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round;
